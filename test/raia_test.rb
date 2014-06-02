@@ -9,7 +9,7 @@ class RaiaTest < Test::Unit::TestCase
     swimmers << Swimmer.new(name: "Renan", birth_year: "1991", time: "1,8")
     swimmers << Swimmer.new(name: "Matheus", birth_year: "1991", time: "1,7")
 
-    raia = Raia.new(swimmers)
-    assert_equal(raia.define_raia!, "Matheus") 
+    raia = Raia.new(swimmers).define_raia!
+    assert_equal(raia[4].name, "Matheus") 
   end
 end
