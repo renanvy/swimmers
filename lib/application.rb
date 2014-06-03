@@ -1,6 +1,5 @@
-# encoding: utf-8
-
 require "./lib/swimmer"
+require "./lib/raia"
 
 class Application
   def self.run!
@@ -28,13 +27,8 @@ class Application
 
       swimmers << Swimmer.new(attributes)
 
-      puts "Dados do nadador cadastrado: "
-
-      swimmers.each do |swimmer|
-        puts "Nome: #{swimmer.name}"
-        puts "Ano de nascimento: #{swimmer.birth_year}"
-        puts "Tempo: #{swimmer.time}"
-      end
+      raia = Raia.new(swimmers).define_raia!
+      raia.print!
 
       puts ""
 
